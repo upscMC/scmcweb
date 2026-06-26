@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的私人 ISO 下载站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-color: #1e1e1e;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(30, 30, 30, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* 返回按钮样式 */
+        .back-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            cursor: pointer;
+            margin-bottom: 20px;
+            border: none;
+        }
+
+        .back-btn:hover {
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #00d2ff;
+            text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+        }
+
+        .file-list {
+            list-style: none;
+        }
+
+        .file-list li {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .file-list li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .file-name {
+            font-size: 16px;
+            word-break: break-all;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .download-btn {
+            text-decoration: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .direct-btn {
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+        }
+
+        .pan-btn {
+            background: linear-gradient(45deg, #ff9966, #ff5e62);
+        }
+
+        .disabled-btn {
+            background: #555;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+        }
+        .direct-btn:hover {
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+        }
+        .pan-btn:hover {
+            box-shadow: 0 0 15px rgba(255, 94, 98, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 返回按钮：点击触发 goBack 函数 -->
+        <button class="back-btn" onclick="goBack()">← 返回</button>
+
+        <h1>📂 私人 ISO 镜像下载站</h1>
+        <ul class="file-list">
+            
+            <li>
+                <span class="file-name">VMware Tools</span>
+                <div class="btn-group">
+                    <a href="https://pan.vma.cc/pan/d/63ec1aebf57cb69515fee59257df93e0?ext=iso" class="download-btn direct-btn" target="_blank">直链下载</a>
+                    <a href="#" class="download-btn disabled-btn">网盘准备中</a>
+                </div>
+            </li>
+
+            <li>
+                <span class="file-name">微PE工具箱</span>
+                <div class="btn-group">
+                    <a href="https://pan.vma.cc/pan/d/4886a7ea22403e1caea2b696c183566e?ext=iso" class="download-btn direct-btn" target="_blank">直链下载</a>
+                    <a href="#" class="download-btn disabled-btn">网盘准备中</a>
+                </div>
+            </li>
+
+            <li>
+                <span class="file-name">Windows Vista</span>
+                <div class="btn-group">
+                    <a href="https://pan.vma.cc/pan/d/472c2f3079fdf87c67f20744644fe062?ext=iso" class="download-btn direct-btn" target="_blank">直链下载</a>
+                    <a href="#" class="download-btn disabled-btn">网盘准备中</a>
+                </div>
+            </li>
+
+            <li>
+                <span class="file-name">Windows 7</span>
+                <div class="btn-group">
+                    <a href="https://pan.vma.cc/pan/d/480b62c3acd6c8a36b18d9e906cd90d2?ext=iso" class="download-btn direct-btn" target="_blank">直链下载</a>
+                    <a href="https://1858433566.share.123865.com/123pan/6PZ7vd-vsgOh?pwd=t74k#" class="download-btn pan-btn" target="_blank">网盘下载</a>
+                </div>
+            </li>
+
+            <li>
+                <span class="file-name">Windows 10 Dev 2139</span>
+                <div class="btn-group">
+                    <a href="https://pan.vma.cc/pan/d/afb474b293a944f076614402b34ee3fe?ext=iso" class="download-btn direct-btn">直链下载</a>
+                    <a href="https://1858433566.share.123865.com/123pan/6PZ7vd-TfpNh?pwd=LXgC#" class="download-btn pan-btn" target="_blank">网盘下载</a>
+                </div>
+            </li>
+
+            <li>
+                <span class="file-name">Windows XP 32位</span>
+                <div class="btn-group">
+                    <a href="https://pan.vma.cc/pan/d/534314ec312e8407cfdc6ef1ff21b804?ext=iso" class="download-btn direct-btn" target="_blank">直链下载</a>
+                    <a href="#" class="download-btn disabled-btn">网盘准备中</a>
+                </div>
+            </li>
+
+            <li>
+                <span class="file-name">Windows XP 64位</span>
+                <div class="btn-group">
+                    <a href="https://pan.vma.cc/pan/d/936adc3e66471f647102b98bee94b650?ext=iso" class="download-btn direct-btn" target="_blank">直链下载</a>
+                    <a href="#" class="download-btn disabled-btn">网盘准备中</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- 返回逻辑脚本 -->
+    <script>
+        function goBack() {
+            // 【重要】请在这里填入你要返回的页面地址，比如 'index.html' 或 'http://你的域名.com'
+            const targetUrl = 'index.html'; 
+            
+            // 如果浏览器有上一页记录，优先尝试返回上一页；否则跳转到指定地址
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = targetUrl;
+            }
+        }
+    </script>
+
+</body>
+</html>
