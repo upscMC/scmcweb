@@ -52,6 +52,18 @@
         object-fit: cover;
     }
 
+    /* 新增：B站文字链接样式 */
+    .bilibili-text-link {
+        color: #fb7299; /* B站粉色 */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        transition: color 0.2s ease;
+    }
+    .bilibili-text-link:hover {
+        color: #ff9ebb; /* 悬停时更亮的粉色 */
+    }
+
     /* 跳转下载页按钮 */
     .go-download-btn {
         display: inline-block;
@@ -76,7 +88,10 @@
     <div class="main-container">
         <a href="https://space.bilibili.com/3706940798536112" target="_blank" class="bilibili-avatar-btn">
             <img src="me.avif" alt="我的B站头像">
-            <h1>欢迎来到我的个人网站</h1>
+        </a>
+        <!-- 新增：B站文字链接 -->
+        <a href="https://space.bilibili.com/3706940798536112" target="_blank" class="bilibili-text-link">
+            我的B站
         </a>
         <a href="download.html" class="go-download-btn">
             下载 Windows 镜像
